@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace — HABITAT SYSTEMS</title>
+<meta name="description" content="Order verified planning, design, survey and construction services in Naira, protected by escrow.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="shop-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Marketplace</div>
+    <h1>Shop verified professional services — <span class="accent">paid safely through escrow</span></h1>
+    <p>Planners, architects, engineers, surveyors, valuers, builders and environmental consultants. Every price is in Naira and every payment is released in milestones.</p>
+    <form class="search-bar" id="searchForm" role="search"><input id="q" type="search" placeholder="Search services, e.g. planning permit, survey plan, valuation…" aria-label="Search services"><button>Search</button></form>
+    <div class="trust-row"><span>Regulator-verified professionals</span><span>Funds held in escrow</span><span>Pay per milestone</span><span>Mediation if you disagree</span></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2rem"><div class="container">
+  <div class="shop-toolbar">
+    <div class="chips" id="chips"></div>
+    <div class="tool-sel">
+      <select id="priceSel" aria-label="Max price"><option value="0">Any price</option><option value="500000">Under ₦500,000</option><option value="2000000">Under ₦2,000,000</option><option value="5000000">Under ₦5,000,000</option></select>
+      <select id="sortSel" aria-label="Sort"><option value="rel">Sort: Recommended</option><option value="pl">Price: low to high</option><option value="ph">Price: high to low</option><option value="rt">Top rated</option></select>
+    </div>
+  </div>
+  <p class="shop-count" id="count"></p>
+  <div class="product-grid" id="grid"></div>
+
+  <div class="banner-cta" style="margin-top:3rem">
+    <div><h2>Are you a professional?</h2><p>Join the verified network, add your payout account and get listed here.</p></div>
+    <a class="btn btn-accent btn-lg" href="network.html">Join &amp; add payout account →</a>
+  </div>
+</div></section>
+
+<!-- Cart drawer -->
+<div class="drawer-overlay" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head"><h3>🛒 Your cart</h3><button class="modal-close" id="closeCart">✕</button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+<div id="modalRoot"></div>
+<div class="toast-root" id="toasts"></div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/store.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/marketplace.js"></script>
+</body>
+</html>

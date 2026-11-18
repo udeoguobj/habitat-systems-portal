@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mediation — HABITAT SYSTEMS</title>
+<meta name="description" content="Initiate or close a mediation case between a client and professional.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Mediation</div>
+    <span class="eyebrow">Dispute resolution</span>
+    <h1>Mediation</h1>
+    <p>Either party can request mediation, but we only step in once both sides consent to us viewing the relevant chat and project data.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+<div class="two-col">
+
+  <div class="form-card" id="initiationCard">
+    <h3>1. Mediation Initiation Form</h3>
+    <p class="hint" style="margin-bottom:1.25rem">Start here if you and the other party disagree on a milestone.</p>
+    <form id="initForm">
+      <div class="form-group"><label>Project ID *</label><input class="form-control" required value="HB/EM/0001"></div>
+      <div class="form-group"><label>Milestone in dispute *</label><input class="form-control" required value="3. Roofing & Envelope"></div>
+      <div class="form-group"><label>You are the *</label>
+        <select class="form-control" required><option>Client</option><option>Professional</option></select>
+      </div>
+      <div class="form-group"><label>Summary of the issue *</label><textarea class="form-control" rows="3" required placeholder="Describe what happened, in your own words"></textarea></div>
+      <div class="form-group"><label>Desired outcome *</label><textarea class="form-control" rows="2" required placeholder="What would resolve this for you?"></textarea></div>
+      <div class="consent-box">
+        <input type="checkbox" id="initConsent" required>
+        <label for="initConsent" style="font-size:.85rem">I allow HABITAT SYSTEMS to access my chat and project data for this project, for the sole purpose of mediating this dispute.</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:1.25rem">Submit Mediation Request</button>
+    </form>
+  </div>
+
+  <div>
+    <div class="card">
+      <h3>How mediation works</h3>
+      <ol style="margin-top:.75rem;padding-left:1.1rem;font-size:.88rem;color:var(--text-muted);line-height:1.9">
+        <li>Either party submits the initiation form above, with consent.</li>
+        <li>The other party is notified and asked to also consent.</li>
+        <li>Only once <strong>both</strong> consent do our mediators get read-only access to the chat, milestone history and payment status for that project.</li>
+        <li>All mediator access is logged for audit.</li>
+        <li>Once resolved, mediators mark the case closed and access is automatically revoked (form below).</li>
+      </ol>
+    </div>
+
+    <div class="card" id="statusCard" style="margin-top:1.5rem;display:none">
+      <span class="status-pill status-pending" id="statusPill">Awaiting other party's consent</span>
+      <h3 style="margin-top:.75rem">Case MED-<span id="caseId"></span></h3>
+      <p class="hint" style="margin-top:.5rem" id="statusText">We've notified the other party. Mediator access stays locked until they also consent.</p>
+      <button class="btn btn-ghost btn-block" id="simulateConsentBtn" style="margin-top:1rem">Demo: Simulate Other Party's Consent</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DISENGAGEMENT FORM ================= -->
+<div class="form-card" id="disengageCard" style="margin-top:2.5rem;display:none">
+  <h3>2. Mediation Disengagement Form</h3>
+  <p class="hint" style="margin-bottom:1.25rem">Mediator-only: close a resolved case and revoke platform access to the conversation.</p>
+  <form id="disengageForm">
+    <div class="form-group"><label>Case ID</label><input class="form-control" id="disengageCaseId" readonly></div>
+    <div class="form-group"><label>Outcome / resolution notes *</label><textarea class="form-control" rows="3" required placeholder="Summarize how the dispute was resolved"></textarea></div>
+    <div class="form-group">
+      <label><input type="checkbox" required style="margin-right:.5rem"> Client confirms resolution</label>
+      <label style="margin-top:.4rem;display:block"><input type="checkbox" required style="margin-right:.5rem"> Professional confirms resolution</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Close Case &amp; Revoke Mediator Access</button>
+  </form>
+</div>
+
+<div class="alert alert-success" id="closedAlert" style="display:none;margin-top:1.5rem">✅ Case closed. Mediator access to this conversation has been revoked — only the client and professional retain access, exactly as before mediation began.</div>
+
+</div></section>
+
+<script>
+(function(){
+  const initForm = document.getElementById('initForm');
+  const statusCard = document.getElementById('statusCard');
+  const statusPill = document.getElementById('statusPill');
+  const statusText = document.getElementById('statusText');
+  const caseIdEl = document.getElementById('caseId');
+  const simulateBtn = document.getElementById('simulateConsentBtn');
+  const disengageCard = document.getElementById('disengageCard');
+  const disengageForm = document.getElementById('disengageForm');
+  const closedAlert = document.getElementById('closedAlert');
+
+  let caseId = null;
+
+  initForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    caseId = Math.floor(100000 + Math.random()*900000);
+    caseIdEl.textContent = caseId;
+    document.getElementById('disengageCaseId').value = 'MED-' + caseId;
+    statusCard.style.display = 'block';
+    initForm.querySelector('button').disabled = true;
+  });
+
+  simulateBtn.addEventListener('click', () => {
+    // Demo only: stands in for the other party checking their own consent box.
+    // In production, mediator access is only granted server-side once BOTH
+    // consent records exist — never on a single party's say-so.
+    statusPill.textContent = 'Both parties consented — mediator access granted';
+    statusPill.className = 'status-pill status-verified';
+    statusText.textContent = 'A mediator now has read-only access to the chat and project data for MED-' + caseId + '. This access is logged.';
+    simulateBtn.style.display = 'none';
+    disengageCard.style.display = 'block';
+  });
+
+  disengageForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    closedAlert.style.display = 'flex';
+    disengageForm.querySelector('button').disabled = true;
+    statusPill.textContent = 'Case closed — access revoked';
+    statusPill.className = 'status-pill status-verified';
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

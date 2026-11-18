@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Network — HABITAT SYSTEMS</title>
+<meta name="description" content="Register as a verified planning, engineering, architecture or construction professional.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Network</div>
+    <span class="eyebrow">Professional network</span>
+    <h1>Join the HABITAT SYSTEMS Professional Network</h1>
+    <p>Register as a verified engineer, surveyor, architect, planner or other built-environment professional. After your one-time verification fee is confirmed, we check your professional body number against the relevant regulatory council.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+<div class="two-col">
+
+  <form class="form-card" id="regForm" novalidate>
+    <div class="alert alert-info">🔒 This form is transmitted over an encrypted HTTPS connection. Your data is used only to verify and list your professional profile.</div>
+
+    <div class="form-group">
+      <label>Full name of professional *</label>
+      <input class="form-control" id="fullName" required placeholder="e.g. Emeka Udeogu">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Type of profession *</label>
+        <select class="form-control" id="profType" required>
+          <option value="">Select profession</option>
+          <option value="Engineer">Engineer</option>
+          <option value="Structural Engineer">Structural Engineer</option>
+          <option value="Surveyor">Surveyor</option>
+          <option value="Architect">Architect</option>
+          <option value="Town Planner">Town Planner</option>
+          <option value="Estate Surveyor & Valuer">Estate Surveyor &amp; Valuer</option>
+          <option value="Quantity Surveyor">Quantity Surveyor</option>
+          <option value="Transport Planner">Transport Planner</option>
+          <option value="Builder">Builder / Construction Professional</option>
+          <option value="Project Manager">Project Manager</option>
+          <option value="Environmental Consultant">Environmental Consultant</option>
+          <option value="Planning Services Consultant">Planning Services Consultant</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Professional body number *</label>
+        <input class="form-control" id="bodyNumber" required placeholder="e.g. COREN/R.12345">
+        <p class="hint" id="bodyHint">Select a profession to see which regulatory body this will be checked against.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Address of office *</label>
+      <textarea class="form-control" id="officeAddress" rows="2" required placeholder="Office address"></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Mobile number *</label>
+        <input class="form-control" id="mobile" required placeholder="080XXXXXXXX">
+      </div>
+      <div class="form-group">
+        <label>Email address *</label>
+        <input class="form-control" type="email" id="email" required placeholder="you@email.com">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Years of experience *</label>
+      <input class="form-control" type="number" min="0" id="years" required placeholder="e.g. 8">
+    </div>
+
+    <div class="form-group">
+      <label>Area(s) of specialization *</label>
+      <div class="checklist">
+        <label style="grid-column:1 / -1;background:var(--primary-light);border-color:var(--primary)"><input type="checkbox" id="specAll"> <strong>All of the above</strong></label>
+        <label><input type="checkbox" name="spec" value="Engineering" id="spec-engineering"> Engineering</label>
+<label><input type="checkbox" name="spec" value="Surveying" id="spec-surveying"> Surveying</label>
+<label><input type="checkbox" name="spec" value="Architecture" id="spec-architecture"> Architecture</label>
+<label><input type="checkbox" name="spec" value="Structural" id="spec-structural"> Structural</label>
+<label><input type="checkbox" name="spec" value="Town Planning" id="spec-town-planning"> Town Planning</label>
+<label><input type="checkbox" name="spec" value="Estate Management" id="spec-estate-management"> Estate Management</label>
+<label><input type="checkbox" name="spec" value="Transport" id="spec-transport"> Transport</label>
+<label><input type="checkbox" name="spec" value="Construction" id="spec-construction"> Construction</label>
+<label><input type="checkbox" name="spec" value="Project Management" id="spec-project-management"> Project Management</label>
+<label><input type="checkbox" name="spec" value="Environmental" id="spec-environmental"> Environmental</label>
+<label><input type="checkbox" name="spec" value="Planning Services" id="spec-planning-services"> Planning Services</label>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Payout account — where escrow remits your earnings *</label>
+      <div class="bank-box" style="margin-bottom:0;border-style:solid;border-color:var(--accent);background:#fff8ea">
+        <p class="hint" style="margin:0 0 .8rem">When a client approves a milestone, escrow pays that milestone's share (the contract sum less Habitat's 20% service charge) straight to this account. You can edit it later from your dashboard.</p>
+        <div class="form-group">
+          <label for="payBank">Bank *</label>
+          <select class="form-control" id="payBank" required><option value="">Select your bank</option></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label for="payNum">Account number (10 digits) *</label>
+            <input class="form-control" id="payNum" inputmode="numeric" maxlength="10" pattern="\d{10}" required placeholder="0123456789">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label for="payName">Account name *</label>
+            <input class="form-control" id="payName" required placeholder="Name on the account">
+          </div>
+        </div>
+        <p class="hint" id="payHint" style="margin-top:.6rem">Use an account in your own name or your registered business name.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Verification fee</label>
+      <div class="bank-box" style="margin-bottom:0">
+        <div class="bank-row"><span>One-time registration &amp; verification fee</span><span>₦15,000.00</span></div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-accent btn-block" id="registerBtn">Register &amp; Continue to Payment</button>
+    <p class="hint" style="text-align:center;margin-top:.75rem">By registering you agree that your professional body number will be checked against the relevant council's public register.</p>
+  </form>
+
+  <div>
+    <div class="card">
+      <h3>How verification works</h3>
+      <ol style="margin-top:.75rem;padding-left:1.1rem;font-size:.88rem;color:var(--text-muted);line-height:1.9">
+        <li>You submit your registration details.</li>
+        <li>You add the payout account escrow will remit your earnings to.</li>
+        <li>You pay the one-time verification fee to our account.</li>
+        <li>Once payment is confirmed, we automatically check your professional body number against the relevant council's register.</li>
+        <li>Verified professionals appear on the public Network directory with a "Verified" badge.</li>
+      </ol>
+    </div>
+    <div class="card" style="margin-top:1.5rem">
+      <h3>Regulatory bodies we check against</h3>
+      <ul style="margin-top:.75rem">
+        <li>Engineering / Structural — COREN (coren.gov.ng)</li>
+        <li>Surveying — SURCON (surcon.gov.ng)</li>
+        <li>Architecture — ARCON (arcon.gov.ng)</li>
+        <li>Town Planning / Planning Services — TOPREC (toprec.gov.ng)</li>
+        <li>Estate Management — ESVARBON (esvarbon.gov.ng)</li>
+        <li>Construction — CORBON (corbon.gov.ng)</li>
+        <li>Environmental — EHORECON (ehorecon.gov.ng)</li>
+        <li>Quantity Surveying — QSRBN (qsrbn.gov.ng)</li>
+      </ul>
+      <p class="hint" style="margin-top:.75rem">Where a council has no public online verification API, our compliance team completes manual verification within 2 business days and updates your status automatically.</p>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <h3>Complete Verification Payment</h3>
+        <p>Transfer to the HABITAT SYSTEMS account below</p>
+      </div>
+      <button class="modal-close" id="closePayment">✕</button>
+    </div>
+    <div class="modal-body">
+      <ul class="progress-steps" id="progressSteps">
+        <li class="active" data-n="1">Pay</li>
+        <li data-n="2">Confirm</li>
+        <li data-n="3">Verify</li>
+        <li data-n="4">Done</li>
+      </ul>
+
+      <div id="stepPay">
+        <div class="bank-box">
+          <div class="bank-row"><span>Bank Name</span><span id="bankName">—</span></div>
+          <div class="bank-row"><span>Account Name</span><span id="bankAcctName">—</span></div>
+          <div class="bank-row"><span>Account Number</span><span id="acctNum">—</span></div>
+          <div class="bank-row"><span>Amount</span><span>₦15,000.00</span></div>
+        </div>
+        <label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:.4rem">Transaction reference (quote this on your transfer)</label>
+        <div class="copy-field">
+          <span id="txnId">HBSYS-VERIFY-000000</span>
+          <button class="copy-btn" id="copyTxn">Copy</button>
+        </div>
+        <div class="alert alert-warn" style="margin-top:.5rem">This connects to a live payment gateway (Paystack/Flutterwave/Stripe) in production. Configure API keys server-side — see PAYMENT-INTEGRATION.md.</div>
+        <button class="btn btn-primary btn-block" id="madePaymentBtn">I've Made the Transfer</button>
+      </div>
+
+      <div id="stepConfirm" style="display:none;text-align:center;padding:1.5rem 0">
+        <div class="spinner"></div>
+        <p style="margin-top:1rem;font-weight:700">Confirming your payment…</p>
+        <p class="hint">Checking transaction reference against gateway webhook</p>
+      </div>
+
+      <div id="stepVerify" style="display:none;text-align:center;padding:1.5rem 0">
+        <div class="spinner"></div>
+        <p style="margin-top:1rem;font-weight:700" id="verifyingText">Verifying professional body number…</p>
+        <p class="hint">Cross-checking with the regulatory council register</p>
+      </div>
+
+      <div id="stepDone" style="display:none">
+        <div class="alert alert-success" id="doneAlert">✅ Payment confirmed and professional body number verified.</div>
+        <div class="bank-box">
+          <div class="bank-row"><span>Transaction ID</span><span id="doneTxn">—</span></div>
+          <div class="bank-row"><span>Professional body number</span><span id="doneBody">—</span></div>
+          <div class="bank-row"><span>Verification status</span><span id="doneStatus">—</span></div>
+        </div>
+        <a href="dashboard.html#pro/payout" class="btn btn-primary btn-block">Go to My Professional Dashboard</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/store.js"></script>
+<script src="assets/js/network.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

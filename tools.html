@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — HABITAT SYSTEMS</title>
+<meta name="description" content="All HABITAT SYSTEMS planning tools in one place.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Tools</div>
+    <span class="eyebrow">All in one place</span>
+    <h1>Tools</h1>
+    <p>Every HABITAT SYSTEMS planning tool now lives on this single page. Sign in or create a free account to use any of them.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+  <div class="grid grid-3">
+    <a href="#" class="card tool-card" data-tool="state-guide.html">
+      <span class="lock-badge">Sign in to use</span>
+      <div class="card-icon">📋</div>
+      <h3>State Guide</h3>
+      <p>Step-by-step planning approval requirements for every state and FCT.</p>
+    </a>
+    <a href="#" class="card tool-card" data-tool="planner.html">
+      <span class="lock-badge">Sign in to use</span>
+      <div class="card-icon">🧭</div>
+      <h3>Planner</h3>
+      <p>Build a compliant project timeline from land acquisition to occupancy permit.</p>
+    </a>
+    <a href="#" class="card tool-card" data-tool="doc-tracker.html">
+      <span class="lock-badge">Sign in to use</span>
+      <div class="card-icon">📁</div>
+      <h3>Doc Tracker</h3>
+      <p>Track every submitted document and its approval status in real time.</p>
+    </a>
+    <a href="#" class="card tool-card" data-tool="eia-tools.html">
+      <span class="lock-badge">Sign in to use</span>
+      <div class="card-icon">🌿</div>
+      <h3>EIA Tools</h3>
+      <p>Screen projects for Environmental Impact Assessment requirements.</p>
+    </a>
+    <a href="#" class="card tool-card" data-tool="cost-estimator.html">
+      <span class="lock-badge">Sign in to use</span>
+      <div class="card-icon">💰</div>
+      <h3>Cost Estimator</h3>
+      <p>Get a realistic estimate of statutory fees and professional costs.</p>
+    </a>
+    <a href="#" class="card tool-card" data-tool="gis.html">
+      <span class="lock-badge">Sign in to use</span>
+      <div class="card-icon">🗺️</div>
+      <h3>Web GIS</h3>
+      <p>Browser-based GIS for monitoring, permit verification and compliance.</p>
+    </a></div>
+</div></section>
+
+<!-- ================= OPT-IN / SIGN UP GATE MODAL ================= -->
+<div class="modal-overlay" id="optinModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <h3>Create a free account to continue</h3>
+        <p>Sign up takes under a minute — then every tool unlocks.</p>
+      </div>
+      <button class="modal-close" id="optinClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-info">🔒 We ask you to sign in so your progress, documents and estimates are saved to your dashboard.</div>
+      <a href="signup.html" class="btn btn-accent btn-block" style="margin-bottom:.75rem">Create Free Account</a>
+      <a href="login.html" class="btn btn-ghost btn-block">I already have an account — Sign In</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById('optinModal');
+  const close = document.getElementById('optinClose');
+  const signedIn = localStorage.getItem('hs_demo_signed_in') === '1';
+
+  document.querySelectorAll('.tool-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dest = card.getAttribute('data-tool');
+      if (signedIn) {
+        window.location.href = dest;
+      } else {
+        modal.classList.add('open');
+        modal.dataset.dest = dest;
+      }
+    });
+  });
+  close.addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

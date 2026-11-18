@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emeka Udeogu — HABITAT SYSTEMS</title>
+<meta name="description" content="Professional profile: experience, qualifications, jobs done and publications.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="professionals.html">Professionals</a> / Emeka Udeogu</div>
+    <div class="profile-hero">
+      <div class="pro-avatar">EU</div>
+      <div style="flex:1">
+        <h1>Emeka Udeogu</h1>
+        <p style="color:#c9dcd1">Structural Engineer — Lagos, Nigeria</p>
+        <div class="contact-row">
+          <span class="status-pill status-verified">✓ COREN Verified — COREN/R.12345</span>
+          <span class="pro-rating" style="color:var(--accent)">★ 4.9 (38 reviews)</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:.6rem">
+        <button class="btn btn-accent" id="contactBtn">📞 View Contact</button>
+        <a href="chat.html" class="btn btn-outline">💬 Chat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+<div class="two-col">
+  <div>
+    <div class="card">
+      <h3>Experience</h3>
+      <p style="margin-top:.5rem">8 years structural design experience across residential, commercial and mixed-use developments in Lagos and Ogun State.</p>
+    </div>
+    <div class="card" style="margin-top:1.5rem">
+      <h3>Qualifications</h3>
+      <ul>
+        <li>B.Eng Civil Engineering, University of Lagos</li>
+        <li>COREN Registered Engineer — COREN/R.12345</li>
+        <li>Member, Nigerian Society of Engineers (NSE)</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:1.5rem">
+      <h3>Jobs Done</h3>
+      <ul>
+        <li>Residential Duplex, Lekki — Completed 2025</li>
+        <li>Commercial Plaza, Abuja (structural consultant) — Completed 2024</li>
+        <li>Warehouse Facility, Ogun — Completed 2023</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:1.5rem">
+      <h3>Publications</h3>
+      <ul>
+        <li>Article — "Designing for Lagos's Soft Soils"</li>
+        <li>Blog — "Three Site Visits, Three Surprises"</li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="card"><h3>Specializations</h3><div class="pro-tags" style="margin-top:.75rem"><span class="tag">Structural</span><span class="tag">Engineering</span></div></div>
+    <div class="card" style="margin-top:1.5rem"><h3>Response time</h3><p style="margin-top:.5rem">Typically replies within 4 hours on-platform.</p></div>
+  </div>
+</div>
+</div></section>
+
+<!-- ================= CONTACT ADVANTAGE POPUP ================= -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div><h3>Keep it on HABITAT SYSTEMS</h3><p>Here's what you get by staying on-platform</p></div>
+      <button class="modal-close" id="contactClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <ul style="margin-bottom:1.25rem">
+        <li>🔒 Escrow protection for every payment</li>
+        <li>🛠️ Built-in planning tools &amp; document tracking</li>
+        <li>⚖️ Access to mediation if a dispute comes up</li>
+        <li>🤝 Easy access to other verified professionals</li>
+        <li>📊 A project tracker with milestone-based payments</li>
+      </ul>
+      <a href="chat.html" class="btn btn-primary btn-block" style="margin-bottom:.75rem">💬 Chat on Platform</a>
+      <button class="btn btn-ghost btn-block" id="viewAnywayBtn">View Contact Details Anyway</button>
+      <div id="contactDetails" style="display:none;margin-top:1rem" class="bank-box">
+        <div class="bank-row"><span>Phone</span><span>0809 000 8000</span></div>
+        <div class="bank-row"><span>Email</span><span>udeoguen@gmail.com</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById('contactModal');
+  document.getElementById('contactBtn').addEventListener('click', () => modal.classList.add('open'));
+  document.getElementById('contactClose').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  document.getElementById('viewAnywayBtn').addEventListener('click', () => {
+    document.getElementById('contactDetails').style.display = 'block';
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

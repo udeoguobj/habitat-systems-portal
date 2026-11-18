@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Estimator — HABITAT SYSTEMS</title>
+<meta name="description" content="Estimate planning approval and professional fees.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Cost Estimator</div>
+    <span class="eyebrow">Budget planning</span>
+    <h1>Planning Cost Estimator</h1>
+    <p>Get a realistic estimate of statutory fees and professional costs for your project.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+<div class="two-col">
+  <div class="form-card">
+    <div class="form-group"><label>State</label>
+      <select class="form-control" id="estState"><option value="1">Lagos</option><option value="0.7">FCT Abuja</option><option value="0.6">Rivers</option><option value="0.5">Other State</option></select>
+    </div>
+    <div class="form-group"><label>Building type</label>
+      <select class="form-control" id="estType"><option value="120000">Residential (bungalow/duplex)</option><option value="280000">Block of flats</option><option value="450000">Commercial building</option><option value="900000">Industrial facility</option></select>
+    </div>
+    <div class="form-group"><label>Plot size (sqm)</label><input class="form-control" id="estArea" type="number" value="600"></div>
+    <button class="btn btn-primary btn-block" onclick="runEstimate()">Calculate Estimate</button>
+  </div>
+  <div class="card">
+    <h3>Estimated Cost Breakdown</h3>
+    <table style="margin-top:1rem">
+      <tr><td>Planning permit / application fee</td><td id="r1" style="text-align:right;font-weight:700">₦0</td></tr>
+      <tr><td>Professional fees (architect/engineer, ~7.5%)</td><td id="r2" style="text-align:right;font-weight:700">₦0</td></tr>
+      <tr><td>Survey &amp; documentation</td><td id="r3" style="text-align:right;font-weight:700">₦0</td></tr>
+      <tr><td>EIA / environmental (if applicable)</td><td id="r4" style="text-align:right;font-weight:700">₦0</td></tr>
+      <tr style="border-top:2px solid var(--border)"><td style="font-weight:800">Total estimate</td><td id="rTotal" style="text-align:right;font-weight:800;color:var(--primary)">₦0</td></tr>
+    </table>
+    <p style="margin-top:1rem;font-size:.78rem;color:var(--text-muted)">Figures are indicative only and vary by local government area. Confirm current schedules with the relevant state planning authority.</p>
+  </div>
+</div>
+</div></section>
+<script>
+function runEstimate(){
+  const stateMult = parseFloat(document.getElementById('estState').value);
+  const perSqm = parseFloat(document.getElementById('estType').value);
+  const area = parseFloat(document.getElementById('estArea').value)||0;
+  const buildCost = perSqm*area;
+  const permit = buildCost*0.015*stateMult;
+  const prof = buildCost*0.075;
+  const survey = 180000*stateMult;
+  const eia = buildCost>50000000 ? buildCost*0.01 : 0;
+  const total = permit+prof+survey+eia;
+  const fmt = n => '₦'+Math.round(n).toLocaleString('en-NG');
+  document.getElementById('r1').textContent=fmt(permit);
+  document.getElementById('r2').textContent=fmt(prof);
+  document.getElementById('r3').textContent=fmt(survey);
+  document.getElementById('r4').textContent=fmt(eia);
+  document.getElementById('rTotal').textContent=fmt(total);
+}
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

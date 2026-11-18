@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat — HABITAT SYSTEMS</title>
+<meta name="description" content="End-to-end encrypted chat between client and professional.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Messages</div>
+    <span class="eyebrow">Messages</span>
+    <h1>Chat</h1>
+    <p>End-to-end encrypted — only the client and professional in this conversation can read these messages.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+
+  <div style="display:flex;justify-content:flex-end;margin-bottom:1rem;gap:.6rem;align-items:center">
+    <span class="hint">Demo: view the same conversation as —</span>
+    <div class="role-toggle" style="width:220px">
+      <button type="button" class="active" data-view="client">Client</button>
+      <button type="button" data-view="professional">Professional</button>
+    </div>
+  </div>
+
+  <div class="chat-shell">
+    <div class="chat-list">
+      <div class="chat-list-item active">
+        <p>Emeka Udeogu</p>
+        <p id="previewText">Encrypted conversation</p>
+      </div>
+    </div>
+    <div class="chat-main">
+      <div class="chat-head">
+        <div>
+          <strong>Emeka Udeogu</strong>
+          <p class="hint" style="margin:0">Structural Engineer — Project HB/EM/0001</p>
+        </div>
+        <span class="enc-badge">🔒 End-to-end encrypted</span>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <div class="chat-input-row">
+        <input class="form-control" id="chatInput" placeholder="Type a message…">
+        <button class="btn btn-primary" id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-info" style="margin-top:1.5rem">🔒 Messages are encrypted in your browser with AES-GCM using a key derived from an ECDH exchange (Web Crypto API) before being "sent." The mock server (localStorage, standing in for a real backend) only ever stores ciphertext — open your browser's dev tools and inspect <code>localStorage.hs_chat_messages</code> to see it's unreadable. See CHAT-INTEGRATION.md for how to wire this to a real backend + WebSocket relay.</div>
+</div></section>
+
+<script src="assets/js/chat.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

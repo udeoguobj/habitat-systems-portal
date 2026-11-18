@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIA Tools — HABITAT SYSTEMS</title>
+<meta name="description" content="Environmental Impact Assessment screening tool.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/habitat-logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/escrow.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/img/habitat-logo.png" alt="Habitat Systems logo">
+      <div class="brand-text">
+        <h1>HABITAT SYSTEMS</h1>
+        <p>Nigeria's Planning Platform</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="network.html">Network</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="signup.html" class="btn btn-accent">Sign Up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / EIA Tools</div>
+    <span class="eyebrow">Environmental compliance</span>
+    <h1>EIA Screening Tool</h1>
+    <p>Answer a few questions about your project to see whether a full, partial or no Environmental Impact Assessment is required.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container">
+<div class="two-col">
+  <div class="form-card">
+    <div class="form-group"><label>Project type</label>
+      <select class="form-control"><option>Residential development</option><option>Commercial / mixed-use</option><option>Industrial facility</option><option>Infrastructure (roads, drainage)</option><option>Extractive / quarry</option></select>
+    </div>
+    <div class="form-group"><label>Site area (hectares)</label><input class="form-control" type="number" placeholder="e.g. 2.5"></div>
+    <div class="form-group"><label>Located near a water body, wetland or protected area?</label>
+      <select class="form-control"><option>No</option><option>Yes</option></select>
+    </div>
+    <div class="form-group"><label>Estimated project cost (₦)</label><input class="form-control" type="number" placeholder="e.g. 150000000"></div>
+    <button class="btn btn-primary btn-block" onclick="document.getElementById('eiaResult').style.display='block'">Run Screening</button>
+  </div>
+  <div>
+    <div class="card" id="eiaResult" style="display:none">
+      <span class="status-pill status-progress">Partial EIA likely required</span>
+      <h3 style="margin-top:.75rem">Based on your answers</h3>
+      <p style="margin-top:.5rem">Projects of this scale and proximity typically require a Partial Environmental Impact Statement submitted to the State Ministry of Environment alongside your planning application.</p>
+      <ul>
+        <li>Prepare an Environmental Impact Statement (EIS)</li>
+        <li>Engage an EIA-accredited consultant (see Network)</li>
+        <li>Public/community notice period may apply</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:1.5rem">
+      <h3>Why this matters</h3>
+      <p>Nigeria's EIA Act (Cap E12 LFN 2004) requires screening for projects with significant environmental impact before approval can be granted. Screening early avoids delays later in the approval process.</p>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem">
+          <img src="assets/img/habitat-logo.png" alt="logo" style="width:36px;height:36px">
+          <div class="brand-text"><h1 style="font-size:1rem">HABITAT SYSTEMS</h1></div>
+        </div>
+        <p style="font-size:.85rem;max-width:280px">Nigeria's digital platform for planning approvals, urban compliance and verified professional services.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="tools.html">Tools</a>
+        <a href="resources.html">Resources</a>
+        <a href="professionals.html">Find a Professional</a>
+        <a href="network.html">Join the Network</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="project-tracker.html">Project Tracker</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Habitat Systems. All rights reserved.</span>
+      <span class="ssl-badge">🔒 Secured with 256-bit SSL/TLS encryption</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
