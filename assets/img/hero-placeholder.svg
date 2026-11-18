@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c2b1e"/>
+      <stop offset="100%" stop-color="#0f6e8c"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a7a4c" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1a7a4c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+
+  <!-- grid / blueprint lines -->
+  <g stroke="#ffffff" stroke-opacity="0.06">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="700" y1="0" x2="700" y2="600"/>
+  </g>
+
+  <!-- skyline silhouette -->
+  <g fill="#0a1f16" fill-opacity="0.65">
+    <rect x="40" y="330" width="70" height="270"/>
+    <rect x="130" y="260" width="55" height="340"/>
+    <rect x="205" y="380" width="90" height="220"/>
+    <rect x="315" y="220" width="60" height="380"/>
+    <rect x="395" y="300" width="80" height="300"/>
+    <rect x="495" y="180" width="65" height="420"/>
+    <rect x="580" y="340" width="95" height="260"/>
+    <rect x="695" y="260" width="70" height="340"/>
+  </g>
+
+  <!-- windows -->
+  <g fill="#f5a623" fill-opacity="0.55">
+    <rect x="55" y="350" width="10" height="14"/><rect x="80" y="350" width="10" height="14"/>
+    <rect x="55" y="380" width="10" height="14"/><rect x="80" y="380" width="10" height="14"/>
+    <rect x="145" y="285" width="10" height="14"/><rect x="165" y="285" width="10" height="14"/>
+    <rect x="145" y="315" width="10" height="14"/><rect x="165" y="315" width="10" height="14"/>
+    <rect x="410" y="330" width="10" height="14"/><rect x="435" y="330" width="10" height="14"/>
+    <rect x="510" y="210" width="10" height="14"/><rect x="530" y="210" width="10" height="14"/>
+    <rect x="510" y="240" width="10" height="14"/><rect x="530" y="240" width="10" height="14"/>
+    <rect x="600" y="370" width="10" height="14"/><rect x="625" y="370" width="10" height="14"/>
+    <rect x="710" y="290" width="10" height="14"/><rect x="735" y="290" width="10" height="14"/>
+  </g>
+
+  <!-- compass / target motif (echoes the logo) -->
+  <g transform="translate(600,150)" stroke="#f5a623" stroke-width="2" fill="none" opacity="0.85">
+    <circle r="55"/>
+    <circle r="35"/>
+    <circle r="14" fill="#f5a623"/>
+    <line x1="-70" y1="0" x2="70" y2="0"/>
+    <line x1="0" y1="-70" x2="0" y2="70"/>
+  </g>
+
+  <text x="60" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#ffffff" fill-opacity="0.85" font-weight="700">HABITAT SYSTEMS</text>
+  <text x="60" y="104" font-family="Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="2" fill="#9fd6b8">PLANNING • COMPLIANCE • VERIFIED PROFESSIONALS</text>
+</svg>
