@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # HABITAT SYSTEMS — Web Portal (v2)
 
 ## Structure (one HTML file per feature, so each can be edited independently)
@@ -44,7 +43,3 @@ The homepage hero currently uses an abstract SVG graphic in your brand colors ra
 
 ## Try it locally
 Open `index.html` directly in a browser — no build step needed. To see the sign-up gate, click any card on `tools.html`. To see real E2EE in action, open `chat.html`, send a message, then check your browser's dev tools → Application → Local Storage → `hs_chat_messages` to see the ciphertext.
-=======
-# habitat-systems-portal
-An Urban and Regional Town Planning Jobs Hub powered by Habsypec Consultants
->>>>>>> d70e35d8e5ff3698e0b2ee897fdc74da92045f2c
